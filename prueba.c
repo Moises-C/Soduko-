@@ -136,10 +136,6 @@ int BuscarNumero(int **matriz, int numero)
                     matriz[x][y] = 0;
                     return 1;
                 }
-                else
-                {
-                    Esperar();
-                }
                 return 0;
             }
         }
@@ -164,9 +160,7 @@ void VerificarEntradaDatos(int *numero, int *fila, int *columna)
             decidir = 0;
         }
         else
-        {
             decidir = 1;
-        }
         if (1 > *fila || *fila > 3)
         {
             printf("Coloca una fila valida entre 1 ~ 3: ");
@@ -176,9 +170,7 @@ void VerificarEntradaDatos(int *numero, int *fila, int *columna)
             decidir = 0;
         }
         else
-        {
             decidir = 1;
-        }
         if (1 > *columna || *columna > 3)
         {
             printf("Coloca una columna valida entre 1 ~ 3: ");
@@ -188,9 +180,7 @@ void VerificarEntradaDatos(int *numero, int *fila, int *columna)
             decidir = 0;
         }
         else
-        {
             decidir = 1;
-        }
     }
 
     system("cls");
@@ -200,12 +190,11 @@ int **CrearMatriz(void)
 {
     int i;
     int **matriz;
+
     matriz = (int **)malloc(3 * sizeof(int *));
 
     for (i = 0; i < 3; i++)
-    {
         matriz[i] = (int *)malloc(3 * sizeof(int));
-    }
 
     return matriz;
 }
@@ -228,7 +217,6 @@ int VerificarNumeroXFil(int **matriz, int fila, int numero)
                 matriz[fila][y] = 0;
                 return 1;
             }
-            Esperar();
             return 0;
         }
     }
@@ -252,7 +240,6 @@ int VerificarNumeroXCol(int **matriz, int columna, int numero)
                 matriz[x][columna] = 0;
                 return 1;
             }
-            Esperar();
             return 0;
         }
     }
@@ -266,9 +253,7 @@ void LimpiarMatriz(int **matriz)
     for (x = 0; x < 3; x++)
     {
         for (y = 0; y < 3; y++)
-        {
             matriz[x][y] = 0;
-        }
     }
 }
 
@@ -311,6 +296,7 @@ void SumaFilasColumnas(int **matriz)
     {
         sumaFila = 0;
         sumaColumna = 0;
+
         for (y = 0; y < 3; y++)
         {
             sumaFila = (matriz[x][y]) + sumaFila;
@@ -318,9 +304,7 @@ void SumaFilasColumnas(int **matriz)
         }
 
         if (sumaFila == 15 && sumaColumna == 15)
-        {
             contador++;
-        }
     }
 
     GanoSiNo(matriz, contador);
@@ -329,24 +313,18 @@ void SumaFilasColumnas(int **matriz)
 void GanoSiNo(int **matriz, int contador)
 {
     if (contador == 3)
-    {
-
         printf("EUREKA!!! SODUKO RESUELTO!!!\n");
-    }
     else
-    {
         printf(" SODUKO NO RESUELTO!!!\n");
-    }
 
     TerminarSiNo(matriz, 0, 0, 0);
 }
 void LiberarMemoria(int **matriz)
 {
     int i;
+
     for (i = 0; i < 3; i++)
-    {
         free(matriz[i]);
-    }
 
     free(matriz);
 }

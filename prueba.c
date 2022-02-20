@@ -2,27 +2,26 @@
 #include <stdlib.h>
 
 void Cerebro(void);
-void Jugar(int **matriz);
-void TerminarSiNo(int **matriz, int a, int b, int c);
+void Jugar(int **);
+void TerminarSiNo(int **, int, int, int);
 void Esperar(void);
-int RemplazarNumero(int **matriz, int fila, int columna);
-int BuscarNumero(int **matriz, int numero);
-void VerificarEntradaDatos(int *numero, int *fila, int *columna);
+int RemplazarNumero(int **, int, int);
+int BuscarNumero(int **, int);
+void VerificarEntradaDatos(int *, int *, int *);
 int **CrearMatriz(void);
-int VerificarNumeroXFil(int **matriz, int fila, int numero);
-int VerificarNumeroXCol(int **matriz, int columna, int numero);
-void LimpiarMatriz(int **matriz);
-void MostrarMatriz(int **matriz);
-void SumaFilasColumnas(int **matriz);
-void GanoSiNo(int **matriz, int contador);
-void LiberarMemoria(int **matriz);
+int VerificarNumeroXFil(int **, int, int);
+int VerificarNumeroXCol(int **, int, int);
+void LimpiarMatriz(int **);
+void MostrarMatriz(int **);
+void SumaFilasColumnas(int **);
+void GanoSiNo(int **, int);
+void LiberarMemoria(int **);
 
 int main()
 {
     Cerebro();
     return 0;
 }
-
 
 void Cerebro(void)
 {

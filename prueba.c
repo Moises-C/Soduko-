@@ -23,6 +23,7 @@ int main()
     return 0;
 }
 
+
 void Cerebro(void)
 {
     int **matriz;
